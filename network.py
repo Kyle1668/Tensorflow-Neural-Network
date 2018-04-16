@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 
 
 def network_layer(n_features, n_dense_neurons):
-    """[summary]
+    """[Example of a layer of a neural network.]
     
     Arguments:
         n_features {[int]} -- [The number of features in each vector.]
@@ -23,11 +23,20 @@ def network_layer(n_features, n_dense_neurons):
         print(layer_out)
 
 
-def regression_example():
-    x_data = np.linspace(0, 1, 10) + np.random.uniform(-1.5, 1.5, 10)
-    y_data = np.linspace(0, 10, 10) + np.random.uniform(-1.5, 1.5, 10)
+def regression_example(starting_point, stopping_point, num_points):
+    """[Example of a regression task.]
+    
+    Arguments:
+        starting_point {[int]} -- [The lower bound of the random numbers.]
+        stopping_point {[int]} -- [The upper bound of the random numbers.]
+        num_points {[int]} -- [The number of points between the lower an dupper bound to be generated.]
+    """
+
+    x_data = np.linspace(starting_point, stopping_point, num_points) + np.random.uniform(-1.5, 1.5, 10)
+    y_data = np.linspace(starting_point, stopping_point, num_points) + np.random.uniform(-1.5, 1.5, 10)
     plt.plot(x_data, y_data)
+    plt.show()
 
 
 # network_layer(5, 3)
-regression_example()
+regression_example(0, 1, 10)
