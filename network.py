@@ -3,9 +3,13 @@ import tensorflow as tf
 import matplotlib.pyplot as plt
 
 
-def network_layer():
-    n_features = 5
-    n_dense_neurons = 3
+def network_layer(n_features, n_dense_neurons):
+    """[summary]
+    
+    Arguments:
+        n_features {[int]} -- [The number of features in each vector.]
+        n_dense_neurons {[int]} -- [The number of layers.]
+    """
 
     input_data = tf.placeholder(dtype=tf.float32, shape=[None, n_features])
     weights = tf.Variable(tf.random_normal([n_features, n_dense_neurons]))
@@ -25,4 +29,5 @@ def regression_example():
     plt.plot(x_data, y_data)
 
 
+# network_layer(5, 3)
 regression_example()
